@@ -55,7 +55,6 @@ const updateProfileDB = async (modelData) => {
     { name, gender, shot },
     { new: true, runValidators: true }
   )
-  console.log(result)
   return result
 }
 
