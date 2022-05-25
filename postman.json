@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "ac7044fd-1b7a-4920-b2cd-39dc930de13e",
+		"name": "week6-member-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "會員系統",
+			"item": [
+				{
+					"name": "會員註冊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user6\",\r\n    \"email\":\"user6@gmail.com\",\r\n    \"password\":\"123456aA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/users/sign_up",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "會員登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user6@gmail.com\",\r\n    \"password\":\"123456aA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/users/sign_in",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "變更密碼",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGUzMmY3Zjg5NDAzZjIwMWRhMTVmYSIsImlhdCI6MTY1MzQ4NjMzNiwiZXhwIjoxNjUzNDg5OTM2fQ.NijEuRvIVCONrlzl0XH1Qxv-IxC78RNx9dskXkbSEIo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"628e32f7f89403f201da15fa\",\r\n    \"password\":\"123456aA\",\r\n    \"passwordConfirm\":\"123456aA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/users/updatePassword",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得會員資料",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGUzMmY3Zjg5NDAzZjIwMWRhMTVmYSIsImlhdCI6MTY1MzQ4NjMzNiwiZXhwIjoxNjUzNDg5OTM2fQ.NijEuRvIVCONrlzl0XH1Qxv-IxC78RNx9dskXkbSEIo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"628e32f7f89403f201da15fa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "編輯會員資料",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGUzMmY3Zjg5NDAzZjIwMWRhMTVmYSIsImlhdCI6MTY1MzQ4NjMzNiwiZXhwIjoxNjUzNDg5OTM2fQ.NijEuRvIVCONrlzl0XH1Qxv-IxC78RNx9dskXkbSEIo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"628e32f7f89403f201da15fa\",\r\n    \"name\":\"測試使用者\",\r\n    \"gender\":\"\",\r\n    \"shot\":\"\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "貼文系統",
+			"item": [
+				{
+					"name": "取得貼文",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGUzMmY3Zjg5NDAzZjIwMWRhMTVmYSIsImlhdCI6MTY1MzQ4NjMzNiwiZXhwIjoxNjUzNDg5OTM2fQ.NijEuRvIVCONrlzl0XH1Qxv-IxC78RNx9dskXkbSEIo",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/posts",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "發佈貼文",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGUzMmY3Zjg5NDAzZjIwMWRhMTVmYSIsImlhdCI6MTY1MzQ4NjMzNiwiZXhwIjoxNjUzNDg5OTM2fQ.NijEuRvIVCONrlzl0XH1Qxv-IxC78RNx9dskXkbSEIo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userid\":\"628e32f7f89403f201da15fa\",\r\n    \"content\":\"第1個使用者1100001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://week7-member-post.herokuapp.com/posts",
+							"protocol": "https",
+							"host": [
+								"week7-member-post",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
